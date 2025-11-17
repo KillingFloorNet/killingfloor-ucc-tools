@@ -1,0 +1,16 @@
+# Build outputs
+_BACKUP/
+_COMPRESS/
+_OUTPUT/
+
+# Node.js
+node_modules/
+package-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
