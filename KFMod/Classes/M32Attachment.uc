@@ -1,0 +1,68 @@
+class M32Attachment extends KFWeaponAttachment;
+
+defaultproperties
+{
+    mMuzFlashClass=Class'ROEffects.MuzzleFlash3rdNadeL'
+    MeshRef="KF_Weapons3rd2_Trip.M32_MGL_3rd"
+
+    MovementAnims(0)=JogF_M32_MGL
+    MovementAnims(1)=JogB_M32_MGL
+    MovementAnims(2)=JogL_M32_MGL
+    MovementAnims(3)=JogR_M32_MGL
+    CrouchAnims(0)=CHwalkF_M32_MGL
+    CrouchAnims(1)=CHwalkB_M32_MGL
+    CrouchAnims(2)=CHwalkL_M32_MGL
+    CrouchAnims(3)=CHwalkR_M32_MGL
+    WalkAnims(0)=WalkF_M32_MGL
+    WalkAnims(1)=WalkB_M32_MGL
+    WalkAnims(2)=WalkL_M32_MGL
+    WalkAnims(3)=WalkR_M32_MGL
+    AirStillAnim=JumpF_Mid
+    AirAnims(0)=JumpF_Mid
+    AirAnims(1)=JumpF_Mid
+    AirAnims(2)=JumpL_Mid
+    AirAnims(3)=JumpR_Mid
+    TakeoffStillAnim=JumpF_Takeoff
+    TakeoffAnims(0)=JumpF_Takeoff
+    TakeoffAnims(1)=JumpF_Takeoff
+    TakeoffAnims(2)=JumpL_Takeoff
+    TakeoffAnims(3)=JumpR_Takeoff
+    LandAnims(0)=JumpF_Land
+    LandAnims(1)=JumpF_Land
+    LandAnims(2)=JumpL_Land
+    LandAnims(3)=JumpR_Land
+
+    TurnRightAnim=TurnR_M32_MGL
+    TurnLeftAnim=TurnL_M32_MGL
+    CrouchTurnRightAnim=CH_TurnR_M32_MGL
+    CrouchTurnLeftAnim=CH_TurnL_M32_MGL
+    IdleRestAnim=Idle_M32_MGL//Idle_Rest
+    IdleCrouchAnim=CHIdle_M32_MGL
+    IdleSwimAnim=Swim_Tread
+    IdleWeaponAnim=Idle_M32_MGL//Idle_Rifle
+    IdleHeavyAnim=Idle_M32_MGL//Idle_Biggun
+    IdleRifleAnim=Idle_M32_MGL//Idle_Rifle
+    IdleChatAnim=Idle_M32_MGL
+    FireAnims(0)=Fire_M32_MGL
+    FireAnims(1)=Fire_M32_MGL
+    FireAnims(2)=Fire_M32_MGL
+    FireAnims(3)=Fire_M32_MGL
+    FireAltAnims(0)=Fire_M32_MGL
+    FireAltAnims(1)=Fire_M32_MGL
+    FireAltAnims(2)=Fire_M32_MGL
+    FireAltAnims(3)=Fire_M32_MGL
+    FireCrouchAnims(0)=CHFire_M32_MGL
+    FireCrouchAnims(1)=CHFire_M32_MGL
+    FireCrouchAnims(2)=CHFire_M32_MGL
+    FireCrouchAnims(3)=CHFire_M32_MGL
+    FireCrouchAltAnims(0)=CHFire_M32_MGL
+    FireCrouchAltAnims(1)=CHFire_M32_MGL
+    FireCrouchAltAnims(2)=CHFire_M32_MGL
+    FireCrouchAltAnims(3)=CHFire_M32_MGL
+    HitAnims(0)=HitF_M32_MGL
+    HitAnims(1)=HitB_M32_MGL
+    HitAnims(2)=HitL_M32_MGL
+    HitAnims(3)=HitR_M32_MGL
+    PostFireBlendStandAnim=Blend_M32_MGL
+    PostFireBlendCrouchAnim=CHBlend_M32_MGL
+}

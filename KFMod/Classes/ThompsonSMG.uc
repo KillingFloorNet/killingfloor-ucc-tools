@@ -1,0 +1,243 @@
+//=============================================================================
+// ThompsonSMG
+//=============================================================================
+// A Thompson Sub Machine Gun
+//=============================================================================
+// Killing Floor Source
+// Copyright (C) 2012 Tripwire Interactive LLC
+// - IJC Weapon Development and John "Ramm-Jaeger" Gibson
+//=============================================================================
+class ThompsonSMG extends KFWeapon
+	config(user);
+
+#exec OBJ LOAD FILE=KillingFloorWeapons.utx
+#exec OBJ LOAD FILE=KillingFloorHUD.utx
+#exec OBJ LOAD FILE=Inf_Weapons_Foley.uax
+
+// Use alt fire to switch fire modes
+simulated function AltFire(float F)
+{
+    if(ReadyToFire(0))
+    {
+        DoToggle();
+    }
+}
+
+function bool RecommendRangedAttack()
+{
+	return true;
+}
+
+//TODO: LONG ranged?
+function bool RecommendLongRangedAttack()
+{
+	return true;
+}
+
+function float SuggestAttackStyle()
+{
+	return -1.0;
+}
+
+exec function SwitchModes()
+{
+	DoToggle();
+}
+
+function float GetAIRating()
+{
+	local Bot B;
+
+	B = Bot(Instigator.Controller);
+	if ( (B == None) || (B.Enemy == None) )
+		return AIRating;
+
+	return AIRating;
+}
+
+function byte BestMode()
+{
+	return 0;
+}
+
+simulated function SetZoomBlendColor(Canvas c)
+{
+	local Byte    val;
+	local Color   clr;
+	local Color   fog;
+
+	clr.R = 255;
+	clr.G = 255;
+	clr.B = 255;
+	clr.A = 255;
+
+	if( Instigator.Region.Zone.bDistanceFog )
+	{
+		fog = Instigator.Region.Zone.DistanceFogColor;
+		val = 0;
+		val = Max( val, fog.R);
+		val = Max( val, fog.G);
+		val = Max( val, fog.B);
+		if( val > 128 )
+		{
+			val -= 128;
+			clr.R -= val;
+			clr.G -= val;
+			clr.B -= val;
+		}
+	}
+	c.DrawColor = clr;
+}
+
+simulated function bool StartFire(int Mode)
+{
+	if( KFHighROFFire(FireMode[Mode]) == none || FireMode[Mode].bWaitForRelease )
+		return super.StartFire(Mode);
+
+	if( !super.StartFire(Mode) )  // returns false when mag is empty
+	   return false;
+
+	if( AmmoAmount(0) <= 0 )
+	{
+    	return false;
+    }
+
+	AnimStopLooping();
+
+	if( !FireMode[Mode].IsInState('FireLoop') && (AmmoAmount(0) > 0) )
+	{
+		FireMode[Mode].StartFiring();
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+	return true;
+}
+
+simulated function AnimEnd(int channel)
+{
+    local name anim;
+    local float frame, rate;
+
+	if(!FireMode[0].IsInState('FireLoop'))
+	{
+        GetAnimParams(0, anim, frame, rate);
+
+        if (ClientState == WS_ReadyToFire)
+        {
+             if ((FireMode[0] == None || !FireMode[0].bIsFiring) && (FireMode[1] == None || !FireMode[1].bIsFiring))
+            {
+                PlayIdle();
+            }
+        }
+	}
+}
+
+simulated event OnZoomOutFinished()
+{
+	local name anim;
+	local float frame, rate;
+
+	GetAnimParams(0, anim, frame, rate);
+
+	if (ClientState == WS_ReadyToFire)
+	{
+		// Play the regular idle anim when we're finished zooming out
+		if (anim == IdleAimAnim)
+		{
+            PlayIdle();
+		}
+		// Switch looping fire anims if we switched to/from zoomed
+		else if( FireMode[0].IsInState('FireLoop') && anim == 'Fire_Iron_Loop')
+		{
+            LoopAnim('Fire_Loop', FireMode[0].FireLoopAnimRate, FireMode[0].TweenTime);
+		}
+	}
+}
+
+/**
+ * Called by the native code when the interpolation of the first person weapon to the zoomed position finishes
+ */
+simulated event OnZoomInFinished()
+{
+	local name anim;
+	local float frame, rate;
+
+	GetAnimParams(0, anim, frame, rate);
+
+	if (ClientState == WS_ReadyToFire)
+	{
+		// Play the iron idle anim when we're finished zooming in
+		if (anim == IdleAnim)
+		{
+		   PlayIdle();
+		}
+		// Switch looping fire anims if we switched to/from zoomed
+		else if( FireMode[0].IsInState('FireLoop') && anim == 'Fire_Loop' )
+		{
+            LoopAnim('Fire_Iron_Loop', FireMode[0].FireLoopAnimRate, FireMode[0].TweenTime);
+		}
+	}
+}
+
+defaultproperties
+{
+    SkinRefs(0)="KF_IJC_Halloween_Weapons.Thompson.thompson_cmb"
+    SleeveNum=1
+
+    WeaponReloadAnim=Reload_Thompson
+    IdleAimAnim=Idle_Iron
+
+    CustomCrosshair=11
+    CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross5"
+    MagCapacity=30
+    ReloadRate=3.6
+    ReloadAnim="Reload"
+    ReloadAnimRate=1.000000
+
+    Weight=5.000000
+    bModeZeroCanDryFire=True
+    FireModeClass(0)=Class'KFMod.ThompsonFire'
+    FireModeClass(1)=Class'KFMod.NoFire'
+    PutDownAnim="PutDown"
+    SelectSoundRef="KF_IJC_HalloweenSnd.Thompson_Handling_Bolt_Back"
+    SelectForce="SwitchToAssaultRifle"
+    bShowChargingBar=True
+    EffectOffset=(X=100.000000,Y=25.000000,Z=-10.000000)
+    Priority=120
+    InventoryGroup=3
+    GroupOffset=16
+    PickupClass=Class'KFMod.ThompsonPickup'
+    PlayerViewOffset=(X=10.000000,Y=16.000000,Z=-7.000000)
+    BobDamping=4.000000
+    AttachmentClass=Class'kfmod.ThompsonAttachment'
+    IconCoords=(X1=245,Y1=39,X2=329,Y2=79)
+    Description="The Thompson sub-machine gun. An absolute classic of design and functionality, beloved by soldiers and gangsters for decades!"
+    ItemName="Tommy Gun"
+    MeshRef="KF_IJC_Halloween_Weps3.Thompson"
+    DrawScale=1.00000
+    TransientSoundVolume=1.250000
+    AmbientGlow=0
+
+    AIRating=0.550000
+    CurrentRating=0.550000
+
+    DisplayFOV=55.000000
+    StandardDisplayFOV=55.000000
+    PlayerIronSightFOV=65.000000
+    ZoomTime=0.25
+    FastZoomOutTime=0.2
+    ZoomInRotation=(Pitch=-910,Yaw=0,Roll=2910)
+    bHasAimingMode=True
+    ZoomedDisplayFOV=40.000000
+
+    HudImageRef="KF_IJC_HUD.WeaponSelect.Thompson_unselected"
+    SelectedHudImageRef="KF_IJC_HUD.WeaponSelect.Thompson"
+    TraderInfoTexture=Texture'KF_IJC_HUD.Trader_Weapon_Icons.Trader_Thompson'
+
+    AppID=210934
+    bIsTier2Weapon=true
+}

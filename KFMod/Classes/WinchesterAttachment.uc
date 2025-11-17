@@ -1,0 +1,72 @@
+class WinchesterAttachment extends KFWeaponAttachment;
+
+defaultproperties
+{
+    mMuzFlashClass=Class'ROEffects.MuzzleFlash3rdSTG'
+    mTracerClass=Class'KFMod.KFLargeTracer'
+    bHeavy=True
+    SplashEffect=Class'BulletSplashEmitter'
+    CullDistance=5000.000000
+    Mesh=SkeletalMesh'KF_Weapons3rd_Trip.Winchester_3rd'
+
+    MovementAnims(0)=JogF_Winchester
+    MovementAnims(1)=JogB_Winchester
+    MovementAnims(2)=JogL_Winchester
+    MovementAnims(3)=JogR_Winchester
+    CrouchAnims(0)=CHwalkF_Winchester
+    CrouchAnims(1)=CHwalkB_Winchester
+    CrouchAnims(2)=CHwalkL_Winchester
+    CrouchAnims(3)=CHwalkR_Winchester
+    WalkAnims(0)=WalkF_Winchester
+    WalkAnims(1)=WalkB_Winchester
+    WalkAnims(2)=WalkL_Winchester
+    WalkAnims(3)=WalkR_Winchester
+    AirStillAnim=JumpF_Mid
+    AirAnims(0)=JumpF_Mid
+    AirAnims(1)=JumpF_Mid
+    AirAnims(2)=JumpL_Mid
+    AirAnims(3)=JumpR_Mid
+    TakeoffStillAnim=JumpF_Takeoff
+    TakeoffAnims(0)=JumpF_Takeoff
+    TakeoffAnims(1)=JumpF_Takeoff
+    TakeoffAnims(2)=JumpL_Takeoff
+    TakeoffAnims(3)=JumpR_Takeoff
+    LandAnims(0)=JumpF_Land
+    LandAnims(1)=JumpF_Land
+    LandAnims(2)=JumpL_Land
+    LandAnims(3)=JumpR_Land
+
+    TurnRightAnim=TurnR_Winchester
+    TurnLeftAnim=TurnL_Winchester
+    CrouchTurnRightAnim=CH_TurnR_Winchester
+    CrouchTurnLeftAnim=CH_TurnL_Winchester
+    IdleRestAnim=Idle_Winchester//Idle_Rest
+    IdleCrouchAnim=CHIdle_Winchester
+    IdleSwimAnim=Swim_Tread
+    IdleWeaponAnim=Idle_Winchester//Idle_Rifle
+    IdleHeavyAnim=Idle_Winchester//Idle_Biggun
+    IdleRifleAnim=Idle_Winchester//Idle_Rifle
+    IdleChatAnim=Idle_Winchester
+    FireAnims(0)=Fire_Winchester
+    FireAnims(1)=Fire_Winchester
+    FireAnims(2)=Fire_Winchester
+    FireAnims(3)=Fire_Winchester
+    FireAltAnims(0)=Fire_Winchester
+    FireAltAnims(1)=Fire_Winchester
+    FireAltAnims(2)=Fire_Winchester
+    FireAltAnims(3)=Fire_Winchester
+    FireCrouchAnims(0)=CHFire_Winchester
+    FireCrouchAnims(1)=CHFire_Winchester
+    FireCrouchAnims(2)=CHFire_Winchester
+    FireCrouchAnims(3)=CHFire_Winchester
+    FireCrouchAltAnims(0)=CHFire_Winchester
+    FireCrouchAltAnims(1)=CHFire_Winchester
+    FireCrouchAltAnims(2)=CHFire_Winchester
+    FireCrouchAltAnims(3)=CHFire_Winchester
+    HitAnims(0)=HitF_Winchester
+    HitAnims(1)=HitB_Winchester
+    HitAnims(2)=HitL_Winchester
+    HitAnims(3)=HitR_Winchester
+    PostFireBlendStandAnim=Blend_Winchester
+    PostFireBlendCrouchAnim=CHBlend_Winchester
+}

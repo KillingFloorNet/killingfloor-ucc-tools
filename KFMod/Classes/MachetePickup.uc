@@ -1,0 +1,25 @@
+//=============================================================================
+// Machete Pickup.
+//=============================================================================
+class MachetePickup extends KFWeaponPickup;
+
+defaultproperties
+{
+	Weight=1.000000 // Reduced in Balance Round 2
+	cost=500
+	PowerValue=35
+	SpeedValue=56
+	RangeValue=-20
+	Description="A machete - commonly used for hacking through brush, or the limbs of ZEDs."
+	ItemName="Machete"
+	ItemShortName="Machete"
+	InventoryType=Class'KFMod.Machete'
+	PickupMessage="You got a machete."
+	PickupSound=Sound'KF_MacheteSnd.Machete_Pickup'
+	PickupForce="AssaultRiflePickup"
+	StaticMesh=StaticMesh'KF_pickups_Trip.machette_pickup'
+	CollisionRadius=28.000000
+	CollisionHeight=5.000000
+	EquipmentCategoryID=0
+	CorrespondingPerkIndex=4
+}

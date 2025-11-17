@@ -1,0 +1,47 @@
+//=============================================================================
+// Scythe Inventory class
+//=============================================================================
+class Scythe extends KFMeleeGun;
+
+defaultproperties
+{
+    SkinRefs(0)="KF_IJC_Halloween_Weapons.Scythe.scythe_cmb"
+
+    weaponRange=115.000000
+
+    BloodyMaterialRef="KF_IJC_Halloween_Weapons.Scythe.scythe_blood_cmb"
+    bSpeedMeUp=True
+
+    Weight=6.000000
+    FireModeClass(0)=Class'KFMod.ScytheFire'
+    FireModeClass(1)=Class'KFMod.ScytheFireB'
+    Description="It's a scythe. Long handle. Long blade. Good for reaping corn, wheat - or shambling monsters."
+    Priority=125
+    GroupOffset=6
+    PickupClass=Class'KFMod.ScythePickup'
+    BobDamping=8.000000
+    AttachmentClass=Class'KFMod.ScytheAttachment'
+    IconCoords=(X1=169,Y1=39,X2=241,Y2=77)
+    ItemName="Scythe"
+    MeshRef="KF_IJC_Halloween_Weps3.Scythe"
+    SleeveNum=1
+
+    AIRating=0.300000
+    CurrentRating=0.5
+
+    ChopSlowRate=0.200000
+
+    BloodSkinSwitchArray=0
+
+    DisplayFOV=75.000000
+    StandardDisplayFOV=75.000000
+
+    HudImageRef="KF_IJC_HUD.WeaponSelect.Scythe_unselected"
+    SelectedHudImageRef="KF_IJC_HUD.WeaponSelect.Scythe"
+    SelectSoundRef="KF_KatanaSnd.Katana_Select"
+    TraderInfoTexture=Texture'KF_IJC_HUD.Trader_Weapon_Images.Trader_Scythe'
+
+    bIsTier2Weapon=True
+
+    AppID=210934
+}

@@ -1,0 +1,74 @@
+class SCARMK17Attachment extends KFWeaponAttachment;
+
+defaultproperties
+{
+    mMuzFlashClass=Class'ROEffects.MuzzleFlash3rdMP'
+    mTracerClass=Class'KFMod.KFNewTracer'
+    mShellCaseEmitterClass=Class'KFMod.KFShellSpewer'
+    bRapidFire=True
+    bAltRapidFire=True
+    SplashEffect=Class'BulletSplashEmitter'
+    CullDistance=5000.000000
+    MeshRef="KF_Weapons3rd2_Trip.scar_3rd"
+
+    MovementAnims(0)=JogF_SCAR
+    MovementAnims(1)=JogB_SCAR
+    MovementAnims(2)=JogL_SCAR
+    MovementAnims(3)=JogR_SCAR
+    CrouchAnims(0)=CHwalkF_SCAR
+    CrouchAnims(1)=CHwalkB_SCAR
+    CrouchAnims(2)=CHwalkL_SCAR
+    CrouchAnims(3)=CHwalkR_SCAR
+    WalkAnims(0)=WalkF_SCAR
+    WalkAnims(1)=WalkB_SCAR
+    WalkAnims(2)=WalkL_SCAR
+    WalkAnims(3)=WalkR_SCAR
+    AirStillAnim=JumpF_Mid
+    AirAnims(0)=JumpF_Mid
+    AirAnims(1)=JumpF_Mid
+    AirAnims(2)=JumpL_Mid
+    AirAnims(3)=JumpR_Mid
+    TakeoffStillAnim=JumpF_Takeoff
+    TakeoffAnims(0)=JumpF_Takeoff
+    TakeoffAnims(1)=JumpF_Takeoff
+    TakeoffAnims(2)=JumpL_Takeoff
+    TakeoffAnims(3)=JumpR_Takeoff
+    LandAnims(0)=JumpF_Land
+    LandAnims(1)=JumpF_Land
+    LandAnims(2)=JumpL_Land
+    LandAnims(3)=JumpR_Land
+
+    TurnRightAnim=TurnR_SCAR
+    TurnLeftAnim=TurnL_SCAR
+    CrouchTurnRightAnim=CH_TurnR_SCAR
+    CrouchTurnLeftAnim=CH_TurnL_SCAR
+    IdleRestAnim=Idle_SCAR//Idle_Rest
+    IdleCrouchAnim=CHIdle_SCAR
+    IdleSwimAnim=Swim_Tread
+    IdleWeaponAnim=Idle_SCAR//Idle_Rifle
+    IdleHeavyAnim=Idle_SCAR//Idle_Biggun
+    IdleRifleAnim=Idle_SCAR//Idle_Rifle
+    IdleChatAnim=Idle_SCAR
+    FireAnims(0)=Fire_SCAR
+    FireAnims(1)=Fire_SCAR
+    FireAnims(2)=Fire_SCAR
+    FireAnims(3)=Fire_SCAR
+    FireAltAnims(0)=Fire_SCAR
+    FireAltAnims(1)=Fire_SCAR
+    FireAltAnims(2)=Fire_SCAR
+    FireAltAnims(3)=Fire_SCAR
+    FireCrouchAnims(0)=CHFire_SCAR
+    FireCrouchAnims(1)=CHFire_SCAR
+    FireCrouchAnims(2)=CHFire_SCAR
+    FireCrouchAnims(3)=CHFire_SCAR
+    FireCrouchAltAnims(0)=CHFire_SCAR
+    FireCrouchAltAnims(1)=CHFire_SCAR
+    FireCrouchAltAnims(2)=CHFire_SCAR
+    FireCrouchAltAnims(3)=CHFire_SCAR
+    HitAnims(0)=HitF_SCAR
+    HitAnims(1)=HitB_SCAR
+    HitAnims(2)=HitL_SCAR
+    HitAnims(3)=HitR_SCAR
+    PostFireBlendStandAnim=Blend_SCAR
+    PostFireBlendCrouchAnim=CHBlend_SCAR
+}

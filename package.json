@@ -1,0 +1,21 @@
+{
+  "name": "ucc-tools",
+  "author": "geekrainian",
+  "version": "0.2.0",
+  "description": "Killing Floor UCC Tools - Automated build system for Killing Floor mutators",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "build:specific": "node build.js --mutator"
+  },
+  "keywords": [
+    "killingfloor",
+    "unrealscript",
+    "build-tool",
+    "mutator",
+    "compiler"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

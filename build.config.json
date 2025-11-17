@@ -1,0 +1,6 @@
+{
+  "_comment": "Killing Floor Build Tool Configuration - Only configure additional output directories here",
+  "additionalDirsToCopy": [
+    "D:\\games\\SteamLibrary\\steamapps\\common\\KillingFloor\\System"
+  ]
+}

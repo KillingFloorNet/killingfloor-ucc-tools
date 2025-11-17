@@ -1,0 +1,98 @@
+/*
+	--------------------------------------------------------------
+	Pickup_GoldBar
+	--------------------------------------------------------------
+
+    Pickup Class for the gold bar inventory item in the summer
+    sideshow map.
+
+	Author :  Alex Quick
+
+	--------------------------------------------------------------
+*/
+
+class Pickup_GoldBar extends KF_StoryInventoryPickup;
+
+auto state Pickup
+{
+	/* ValidTouch()
+	 Validate touch (if valid return true to let other pick me up and trigger event).
+	*/
+	function bool ValidTouch( actor Other )
+	{
+        if(IsTouchingDropVolume())
+        {
+            return false;
+        }
+
+        return Super.ValidTouch(Other);
+	}
+}
+
+function bool IsTouchingDropVolume()
+{
+    local Volume V;
+
+    /* Haxxor to the Maxxor */
+    Foreach TouchingActors(class 'Volume', V)
+    {
+        if(V.IsA('KF_DropInventoryVolume'))
+        {
+            return true;    // no picking me back up if I'm placed in this volume!
+        }
+    }
+
+    return false;
+}
+
+state FallingPickup
+{
+    event Landed(Vector HitNormal)
+    {
+        Super.Landed(HitNormal);
+
+        if(IsTouchingDropVolume())
+        {
+            BroadCastPickupEvent(Instigator,3);
+        }
+    }
+}
+
+
+function InitDroppedPickupFor(Inventory Inv)
+{
+    Super.InitDroppedPickupFor(Inv);
+    bAlwaysRelevant = true;
+}
+
+DefaultProperties
+{
+    bRender1PMesh = false
+
+    CollisionRadius = 40
+    CollisionHeight = 10
+
+    PrePivot=(X=0,Y=0,Z=10)
+
+    bOrientOnSlope=false
+
+    LightType=LT_Steady
+    LightBrightness=200.000000
+    LightRadius=3.000000
+    LightHue=45
+    LightSaturation=150
+    bDynamicLight=False
+    bUseDynamicLights =true
+
+    StaticMesh = StaticMesh'Pier_SM.Env_Pier_Gold_Bars'
+
+    AIThreatModifier = 1.5
+
+    /* players must carry one crate at a time */
+    MaxHeldCopies = 1
+
+    CarriedMaterial =  Texture 'Pier_T.Icons.Goldbar_Icon_64'
+    GroundMaterial =   Texture 'Pier_T.Icons.Goldbar_Icon_64'
+    InventoryType = class 'Inv_GoldBar'
+    MessageClass = class 'Msg_GoldBarNotification'
+}

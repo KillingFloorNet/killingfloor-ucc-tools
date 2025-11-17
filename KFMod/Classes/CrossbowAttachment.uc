@@ -1,0 +1,67 @@
+class CrossbowAttachment extends KFMeleeAttachment;
+
+defaultproperties
+{
+    MeshRef="KF_Weapons3rd_Trip.Crossbow_3rd"
+
+    MovementAnims(0)=JogF_Crossbow
+    MovementAnims(1)=JogB_Crossbow
+    MovementAnims(2)=JogL_Crossbow
+    MovementAnims(3)=JogR_Crossbow
+    CrouchAnims(0)=CHwalkF_Crossbow
+    CrouchAnims(1)=CHwalkB_Crossbow
+    CrouchAnims(2)=CHwalkL_Crossbow
+    CrouchAnims(3)=CHwalkR_Crossbow
+    WalkAnims(0)=WalkF_Crossbow
+    WalkAnims(1)=WalkB_Crossbow
+    WalkAnims(2)=WalkL_Crossbow
+    WalkAnims(3)=WalkR_Crossbow
+    AirStillAnim=JumpF_Mid
+    AirAnims(0)=JumpF_Mid
+    AirAnims(1)=JumpF_Mid
+    AirAnims(2)=JumpL_Mid
+    AirAnims(3)=JumpR_Mid
+    TakeoffStillAnim=JumpF_Takeoff
+    TakeoffAnims(0)=JumpF_Takeoff
+    TakeoffAnims(1)=JumpF_Takeoff
+    TakeoffAnims(2)=JumpL_Takeoff
+    TakeoffAnims(3)=JumpR_Takeoff
+    LandAnims(0)=JumpF_Land
+    LandAnims(1)=JumpF_Land
+    LandAnims(2)=JumpL_Land
+    LandAnims(3)=JumpR_Land
+
+    TurnRightAnim=TurnR_Crossbow
+    TurnLeftAnim=TurnL_Crossbow
+    CrouchTurnRightAnim=CH_TurnR_Crossbow
+    CrouchTurnLeftAnim=CH_TurnL_Crossbow
+    IdleRestAnim=Idle_Crossbow//Idle_Rest
+    IdleCrouchAnim=CHIdle_Crossbow
+    IdleSwimAnim=Swim_Tread
+    IdleWeaponAnim=Idle_Crossbow//Idle_Rifle
+    IdleHeavyAnim=Idle_Crossbow//Idle_Biggun
+    IdleRifleAnim=Idle_Crossbow//Idle_Rifle
+    IdleChatAnim=Idle_Crossbow
+    FireAnims(0)=Fire_Crossbow
+    FireAnims(1)=Fire_Crossbow
+    FireAnims(2)=Fire_Crossbow
+    FireAnims(3)=Fire_Crossbow
+    FireAltAnims(0)=Fire_Crossbow
+    FireAltAnims(1)=Fire_Crossbow
+    FireAltAnims(2)=Fire_Crossbow
+    FireAltAnims(3)=Fire_Crossbow
+    FireCrouchAnims(0)=CHFire_Crossbow
+    FireCrouchAnims(1)=CHFire_Crossbow
+    FireCrouchAnims(2)=CHFire_Crossbow
+    FireCrouchAnims(3)=CHFire_Crossbow
+    FireCrouchAltAnims(0)=CHFire_Crossbow
+    FireCrouchAltAnims(1)=CHFire_Crossbow
+    FireCrouchAltAnims(2)=CHFire_Crossbow
+    FireCrouchAltAnims(3)=CHFire_Crossbow
+    HitAnims(0)=HitF_Crossbow
+    HitAnims(1)=HitB_Crossbow
+    HitAnims(2)=HitL_Crossbow
+    HitAnims(3)=HitR_Crossbow
+    PostFireBlendStandAnim=Blend_Crossbow
+    PostFireBlendCrouchAnim=CHBlend_Crossbow
+}

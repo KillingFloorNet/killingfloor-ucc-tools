@@ -1,0 +1,71 @@
+class CrossbuzzsawAttachment extends KFMeleeAttachment;
+
+defaultproperties
+{
+    MeshRef="KF_Weapons3rd_IJC.cheetah_3rd"
+    AmbientSoundRef="KF_IJC_HalloweenSnd.KF_SawbladeBow_Idle"
+    SoundRadius=100
+    SoundVolume=35
+    WeaponAmbientScale=2.0
+
+    MovementAnims(0)=JogF_Cheetah
+    MovementAnims(1)=JogB_Cheetah
+    MovementAnims(2)=JogL_Cheetah
+    MovementAnims(3)=JogR_Cheetah
+    CrouchAnims(0)=CHwalkF_Cheetah
+    CrouchAnims(1)=CHwalkB_Cheetah
+    CrouchAnims(2)=CHwalkL_Cheetah
+    CrouchAnims(3)=CHwalkR_Cheetah
+    WalkAnims(0)=WalkF_Cheetah
+    WalkAnims(1)=WalkB_Cheetah
+    WalkAnims(2)=WalkL_Cheetah
+    WalkAnims(3)=WalkR_Cheetah
+    AirStillAnim=JumpF_Mid
+    AirAnims(0)=JumpF_Mid
+    AirAnims(1)=JumpF_Mid
+    AirAnims(2)=JumpL_Mid
+    AirAnims(3)=JumpR_Mid
+    TakeoffStillAnim=JumpF_Takeoff
+    TakeoffAnims(0)=JumpF_Takeoff
+    TakeoffAnims(1)=JumpF_Takeoff
+    TakeoffAnims(2)=JumpL_Takeoff
+    TakeoffAnims(3)=JumpR_Takeoff
+    LandAnims(0)=JumpF_Land
+    LandAnims(1)=JumpF_Land
+    LandAnims(2)=JumpL_Land
+    LandAnims(3)=JumpR_Land
+
+    TurnRightAnim=TurnR_Cheetah
+    TurnLeftAnim=TurnL_Cheetah
+    CrouchTurnRightAnim=CH_TurnR_Cheetah
+    CrouchTurnLeftAnim=CH_TurnL_Cheetah
+    IdleRestAnim=Idle_Cheetah//Idle_Rest
+    IdleCrouchAnim=CHIdle_Cheetah
+    IdleSwimAnim=Swim_Tread
+    IdleWeaponAnim=Idle_Cheetah//Idle_Rifle
+    IdleHeavyAnim=Idle_Cheetah//Idle_Biggun
+    IdleRifleAnim=Idle_Cheetah//Idle_Rifle
+    IdleChatAnim=Idle_Cheetah
+    FireAnims(0)=Fire_Cheetah
+    FireAnims(1)=Fire_Cheetah
+    FireAnims(2)=Fire_Cheetah
+    FireAnims(3)=Fire_Cheetah
+    FireAltAnims(0)=Fire_Cheetah
+    FireAltAnims(1)=Fire_Cheetah
+    FireAltAnims(2)=Fire_Cheetah
+    FireAltAnims(3)=Fire_Cheetah
+    FireCrouchAnims(0)=CHFire_Cheetah
+    FireCrouchAnims(1)=CHFire_Cheetah
+    FireCrouchAnims(2)=CHFire_Cheetah
+    FireCrouchAnims(3)=CHFire_Cheetah
+    FireCrouchAltAnims(0)=CHFire_Cheetah
+    FireCrouchAltAnims(1)=CHFire_Cheetah
+    FireCrouchAltAnims(2)=CHFire_Cheetah
+    FireCrouchAltAnims(3)=CHFire_Cheetah
+    HitAnims(0)=HitF_Cheetah
+    HitAnims(1)=HitB_Cheetah
+    HitAnims(2)=HitL_Cheetah
+    HitAnims(3)=HitR_Cheetah
+    PostFireBlendStandAnim=Blend_Cheetah
+    PostFireBlendCrouchAnim=CHBlend_Cheetah
+}

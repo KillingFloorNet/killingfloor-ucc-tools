@@ -1,0 +1,69 @@
+class BoomStickAttachment extends KFWeaponAttachment;
+
+defaultproperties
+{
+	mMuzFlashClass=Class'ROEffects.MuzzleFlash3rdKar'
+	mShellCaseEmitterClass=Class'KFMod.KFShotgunShellSpewer'
+	MeshRef="KF_Weapons3rd_Trip.HuntingShot_3rd"
+
+    MovementAnims(0)=JogF_HuntingShotgun
+    MovementAnims(1)=JogB_HuntingShotgun
+    MovementAnims(2)=JogL_HuntingShotgun
+    MovementAnims(3)=JogR_HuntingShotgun
+    CrouchAnims(0)=CHwalkF_HuntingShotgun
+    CrouchAnims(1)=CHwalkB_HuntingShotgun
+    CrouchAnims(2)=CHwalkL_HuntingShotgun
+    CrouchAnims(3)=CHwalkR_HuntingShotgun
+    WalkAnims(0)=WalkF_HuntingShotgun
+    WalkAnims(1)=WalkB_HuntingShotgun
+    WalkAnims(2)=WalkL_HuntingShotgun
+    WalkAnims(3)=WalkR_HuntingShotgun
+    AirStillAnim=JumpF_Mid
+    AirAnims(0)=JumpF_Mid
+    AirAnims(1)=JumpF_Mid
+    AirAnims(2)=JumpL_Mid
+    AirAnims(3)=JumpR_Mid
+    TakeoffStillAnim=JumpF_Takeoff
+    TakeoffAnims(0)=JumpF_Takeoff
+    TakeoffAnims(1)=JumpF_Takeoff
+    TakeoffAnims(2)=JumpL_Takeoff
+    TakeoffAnims(3)=JumpR_Takeoff
+    LandAnims(0)=JumpF_Land
+    LandAnims(1)=JumpF_Land
+    LandAnims(2)=JumpL_Land
+    LandAnims(3)=JumpR_Land
+
+    TurnRightAnim=TurnR_HuntingShotgun
+    TurnLeftAnim=TurnL_HuntingShotgun
+    CrouchTurnRightAnim=CH_TurnR_HuntingShotgun
+    CrouchTurnLeftAnim=CH_TurnL_HuntingShotgun
+    IdleRestAnim=Idle_HuntingShotgun//Idle_Rest
+    IdleCrouchAnim=CHIdle_HuntingShotgun
+    IdleSwimAnim=Swim_Tread
+    IdleWeaponAnim=Idle_HuntingShotgun//Idle_Rifle
+    IdleHeavyAnim=Idle_HuntingShotgun//Idle_Biggun
+    IdleRifleAnim=Idle_HuntingShotgun//Idle_Rifle
+    IdleChatAnim=Idle_HuntingShotgun
+    FireAnims(0)=Fire_HuntingShotgun
+    FireAnims(1)=Fire_HuntingShotgun
+    FireAnims(2)=Fire_HuntingShotgun
+    FireAnims(3)=Fire_HuntingShotgun
+    FireAltAnims(0)=Fire_HuntingShotgun
+    FireAltAnims(1)=Fire_HuntingShotgun
+    FireAltAnims(2)=Fire_HuntingShotgun
+    FireAltAnims(3)=Fire_HuntingShotgun
+    FireCrouchAnims(0)=CHFire_HuntingShotgun
+    FireCrouchAnims(1)=CHFire_HuntingShotgun
+    FireCrouchAnims(2)=CHFire_HuntingShotgun
+    FireCrouchAnims(3)=CHFire_HuntingShotgun
+    FireCrouchAltAnims(0)=CHFire_HuntingShotgun
+    FireCrouchAltAnims(1)=CHFire_HuntingShotgun
+    FireCrouchAltAnims(2)=CHFire_HuntingShotgun
+    FireCrouchAltAnims(3)=CHFire_HuntingShotgun
+    HitAnims(0)=HitF_HuntingShotgun
+    HitAnims(1)=HitB_HuntingShotgun
+    HitAnims(2)=HitL_HuntingShotgun
+    HitAnims(3)=HitR_HuntingShotgun
+    PostFireBlendStandAnim=Blend_HuntingShotgun
+    PostFireBlendCrouchAnim=CHBlend_HuntingShotgun
+}

@@ -1,0 +1,1 @@
+class KFGUISectionBackground extends GUISectionBackground ;
